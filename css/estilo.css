@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: rgb(104, 102, 102);
+    color: #fff;
+    line-height: 1.6;
+}
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition:  opacity 0.4s ease-in-out;
+}
+
+.slide.atual {
+    opacity: 1;
+}
+
+.slide .content {
+    position: absolute;
+    bottom: 70px;
+    left: -600px;
+    opacity: 0;
+    width: 600px;
+    background-color: rgba(248, 218, 218, 0.8);
+    color: rgb(0, 0, 0);
+    padding: 35px;
+}
+
+.slide .content h1 {
+    margin-bottom: 10px;
+}
+
+.slide.atual .content {
+    opacity: 1;
+    transform: translateX(600px);
+    transition: all 0.7s ease-in-out 0.3s;
+}
+
+.buttons button#next {
+    position: absolute;
+    top: 40%;
+    right: 15px;
+}
+  
+.buttons button#prev {
+    position: absolute;
+    top: 40%;
+    left: 15px;
+}
+
+.buttons button {
+    font-size: 2rem;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    padding: 13px 15px;
+    border-radius: 50%;
+    outline: none;
+}
+
+.buttons button:hover {
+    background-color: rgb(181, 222, 250);
+    color: rgb(39, 91, 151);
+}
+
+@media (max-width: 500px) {
+    .slide .content {
+      bottom: -300px;
+      left: 0;
+      width: 100%;
+    }
+  
+    .slide.atual .content {
+      transform: translateY(-300px);
+    }
+}
+
+/* Backgorund Images */
+ 
+.slide:first-child {
+    background: url('https://img0.oastatic.com/img2/56037121/max/t.jpg') no-repeat
+      center top/cover;
+}
+.slide:nth-child(2) {
+    background: url('https://i0.wp.com/turismo.eurodicas.com.br/wp-content/uploads/2019/07/fiordes-da-noruega.jpg?fit=1360%2C907&ssl=1') no-repeat
+      center top/cover;
+}
+.slide:nth-child(3) {
+    background: url('https://www.onde-e-quando.net/site/images/illustration/lofoten_216.jpg') no-repeat
+      center top/cover;
+}
+.slide:nth-child(4) {
+    background: url('https://res.cloudinary.com/simpleview/image/upload/v1449651681/clients/norway/Trolltunga-norway-must-see-nature-attractions-2-1_3c2d1d6d-df0f-40f4-89ea-ea0abe488b13.jpg') no-repeat
+      center top/cover;
+}
+.slide:nth-child(5) {
+    background: url('https://tendimag.files.wordpress.com/2018/09/03-gustav-vigeland-the-nonolith-modelled-in-192-1925.jpg') no-repeat
+      center top/cover;
+} 
+.slide:nth-child(6)  {
+    background: url('https://img.locationscout.net/images/2021-04/atlantic-ocean-road-norway_l.jpg') no-repeat
+      center center/cover;
+}
+
+@media (max-width: 500px) {
+    .slide .content {
+      bottom: -300px;
+      left: 0;
+      width: 100%;
+    }
+  
+    .slide.atual .content {
+      transform: translateY(-300px);
+    }
+}
